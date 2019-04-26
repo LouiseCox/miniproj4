@@ -13,7 +13,7 @@
     <form>
 
             <label>Physics Grade:</label>
-            <select>
+            <select id="physics" required>
                 <option>A</option>
                 <option>B</option>
                 <option>C</option>
@@ -23,7 +23,7 @@
         <br/><br />
             
             <label>Math Grade:</label>
-            <select>
+            <select id="math" required>
                 <option>A</option>
                 <option>B</option>
                 <option>C</option>
@@ -33,7 +33,7 @@
         <br/><br />
 
             <label>Chemisty Grade:</label>
-            <select>
+            <select id="chemistry" required>
                 <option>A</option>
                 <option>B</option>
                 <option>C</option>
@@ -42,16 +42,21 @@
 
     <br/><br />
                 
-            <button type="submit">Submit</button>
-                
+    <button type="submit" onclick="showAverage()">Submit</button>
+        
     </form>
 
-
     <script>
-
-
-        </script>
+        function showAverage() {
+            var markPhysics, markMath, markChemistry;
+            markPhysics = document.getElementById("physics").value;
+            markMath = document.getElementById("math").value;
+            markChemistry = document.getElementById("chemistry").value;
+            document.write("Average GPA: " + myGPA(markPhysics,markMath,markChemistry));
+        }
+    </script>
 
 </body>
+    
 
 </html>
